@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <div style="width: 50%">
-      <h1 v-text="title" class="tittle"></h1>
+    <div style="width: 50%;float: left">
+      <h2 v-text="title" class="tittle"></h2>
       <header-a></header-a>
       <br/>
       <tab-page></tab-page>
+    </div>
+    <div style="float: left;margin: 5% 5% 1% 5%;width: 40%;height: 100%">
+      <i style="font-size: large">Response</i>
+      <respon-area></respon-area>
     </div>
   </div>
 </template>
@@ -13,6 +17,7 @@
 import Store from './store'
 import headerA from './components/header.vue'
 import tabPage from './components/tabpage.vue'
+import responArea from './components/respons.vue'
 
 console.log(Store)
 export default {
@@ -24,7 +29,7 @@ export default {
       childwords: ''
     }
   },
-  components: {headerA, tabPage},
+  components: {headerA, tabPage, responArea},
   watch: {
     items: {
       handler: function (items) {
@@ -63,6 +68,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 </style>
