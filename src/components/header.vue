@@ -28,7 +28,7 @@
     data () {
       return {
         input: '',
-        select: ''
+        select: 'GET'
       }
     }
   }

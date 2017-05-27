@@ -35,7 +35,7 @@
           value: '7',
           label: 'AWS Signature'
         }],
-        value: ''
+        value: '1'
       }
     }
   }

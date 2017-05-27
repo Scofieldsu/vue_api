@@ -1,5 +1,5 @@
 <template>
-  <el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
+  <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
     <el-tab-pane label="Authorization" name="first">
       <div>
         <span >
@@ -31,7 +31,7 @@
   export default {
     data () {
       return {
-        activeName2: 'first'
+        activeName: 'third'
       }
     },
     components: {authPage, headerPage, bodyPage, resquestArea},
