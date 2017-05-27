@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
     <div style="width: 50%">
       <h1 v-text="title" class="tittle"></h1>
       <header-a></header-a>
