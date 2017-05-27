@@ -1,21 +1,31 @@
 <template>
-  <el-col>
-    <el-form ref="formServer" :model="formServer">
-      <el-form-item label="Header" prop="header" >
-        <i class="fa fa-plus-circle fa-lg" @click="onAddHeader" style="cursor: pointer"></i>
-        <div v-for="(item, key) in formServer.header" v-bind:key="key" style="margin-bottom:10px;">
-          <el-input v-model.trim="item.key" style="width: 200px; margin-right: 20px;" placeholder="key"></el-input>
-          <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value"></el-input>
-          <i class="fa fa-minus-circle fa-lg" @click="onRemoveHeader(key)"></i>
-        </div>
-      </el-form-item>
-    </el-form>
-  </el-col>
+  <div>
+    <el-col>
+      <el-form :model="formServer">
+        <el-form-item label="Header params" prop="header" >
+          <i class="fa fa-plus-circle fa-lg" @click="onAddHeader" style="cursor: pointer"></i>
+          <div v-for="(item, key) in formServer.header" v-bind:key="key" style="margin-bottom:10px;">
+            <el-input v-model.trim="item.key" style="width: 50px; margin-right: 20px;" placeholder="key"></el-input>
+            <el-input v-model.trim="item.value" style="width: 50px;" placeholder="value"></el-input>
+            <i class="fa fa-minus-circle fa-lg" @click="onRemoveHeader(key)"></i>
+          </div>
+        </el-form-item>
+      </el-form>
+    </el-col>
+  </div>
 </template>
 <script>
   export default {
     data () {
-      return {}
+      return {
+        formServer: {
+          header: ''
+        },
+        ietm: {
+          key: '',
+          value: ''
+        }
+      }
     },
     methods: {
       onAddHeader () {
