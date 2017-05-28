@@ -28,7 +28,7 @@
     data () {
       return {
         inputurl: '',
-        select: 'GET'
+        select: 'POST'
       }
     },
     methods: {
