@@ -59,6 +59,7 @@ export default {
 <style>
   .tittle{
     text-align: center;
+    color: #20a0ff;
   }
   .finished{
     text-decoration: underline;
