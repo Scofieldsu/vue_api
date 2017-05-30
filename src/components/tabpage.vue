@@ -18,8 +18,12 @@
         </div>
         <div style="width: 100%;height: 100%">
           <resquest-area></resquest-area>
+          <header-page></header-page>>
         </div>
       </div>
+    </el-tab-pane>
+    <el-tab-pane label="Get API" name="fouth">
+      <get-api></get-api>
     </el-tab-pane>
   </el-tabs>
 </template>
@@ -28,13 +32,14 @@
   import headerPage from './Headerpage.vue'
   import bodyPage from './Bodypage.vue'
   import resquestArea from './requestbody.vue'
+  import getApi from './getapi.vue'
   export default {
     data () {
       return {
         activeName: 'third'
       }
     },
-    components: {authPage, headerPage, bodyPage, resquestArea},
+    components: {authPage, headerPage, bodyPage, resquestArea, getApi},
     methods: {
       handleClick (tab, event) {
         console.log(tab, event)

@@ -2,7 +2,7 @@
   <div>
     <el-col>
       <el-form :model="formServer">
-        <el-form-item label="Add header-params:" prop="header" >
+        <el-form-item label="Add params:" prop="header" >
           <i class="el-icon-plus" @click="onAddHeader('addheader')" style="cursor: pointer"></i>
           <br/>
           <div v-for="(item, key) in formServer.header" v-bind:key="key" style="margin-bottom:10px;">
