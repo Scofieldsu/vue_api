@@ -18,11 +18,12 @@
         </div>
         <div style="width: 100%;height: 100%">
           <resquest-area></resquest-area>
-          <header-page></header-page>>
+          <!--<header-page></header-page>>-->
         </div>
       </div>
     </el-tab-pane>
     <el-tab-pane label="Get API" name="fouth">
+      <el-button type="info" size="small" style="margin: 5px">get all api</el-button>
       <get-api></get-api>
     </el-tab-pane>
   </el-tabs>

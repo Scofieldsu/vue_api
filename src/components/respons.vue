@@ -5,7 +5,7 @@
       type="textarea"
       :autosize="{ minRows: 29, maxRows: 100}"
       placeholder=""
-      v-model="textarea1">
+      v-model="response">
     </el-input>
   </div>
 </template>
@@ -14,8 +14,11 @@
 <script>
   export default {
     data () {
-      return {
-        textarea1: ''
+      return {}
+    },
+    computed: {
+      response () {
+        return this.$store.state.response
       }
     }
   }

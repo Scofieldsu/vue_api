@@ -14,45 +14,17 @@
 </template>
 
 <script>
-import Store from './store'
 import headerA from './components/header.vue'
 import tabPage from './components/tabpage.vue'
 import responArea from './components/respons.vue'
 
-console.log(Store)
 export default {
   data: function () {
     return {
-      title: 'API-test',
-      items: Store.fetch(),
-      newItem: '',
-      childwords: ''
+      title: 'API-test'
     }
   },
-  components: {headerA, tabPage, responArea},
-  watch: {
-    items: {
-      handler: function (items) {
-        Store.save(items)
-      },
-      deep: true
-    }
-  },
-  methods: {
-    toggleFinish: function (item) {
-      item.isFinished = !item.isFinished
-    },
-    addNew: function () {
-      this.items.push({
-        label: this.newItem,
-        isFinished: false
-      })
-      this.newItem = ''
-    },
-    listentoMyboy: function (msg) {
-      this.childwords = msg
-    }
-  }
+  components: {headerA, tabPage, responArea}
 }
 </script>
 

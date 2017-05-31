@@ -1,7 +1,7 @@
 <template>
   <div style="margin-top: 15px;">
     <span>
-      <el-input placeholder="API-url" v-model="inputurl"  size="small">
+      <el-input placeholder="API-url" v-model="inputUrl"  size="small">
       <el-select v-model="select" slot="prepend" placeholder="请求方法" >
         <el-option label="GET" value="1"></el-option>
         <el-option label="POST" value="2"></el-option>
@@ -9,7 +9,7 @@
         <el-option label="DELETE" value="4"></el-option>
         <el-option label="PATCH" value="5"></el-option>
       </el-select>
-        <el-button @click="sendmessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">发送</el-button>
+        <el-button @click="sendMessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">发送</el-button>
     </el-input>
     </span>
 
@@ -27,17 +27,17 @@
     components: {ElOption},
     data () {
       return {
-        inputurl: '',
+        inputUrl: '',
         select: 'POST'
       }
     },
     methods: {
-      sendmessage () {
+      sendMessage () {
         let that = this
         console.log('submit')
-        that.axios.post(that.inputurl)
+        that.axios.post(that.inputUrl)
           .then((res) => {
-            console.log(res.data)
+            this.$store.commit('newResponse', res.data)
           })
       }
     }

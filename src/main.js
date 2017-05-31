@@ -7,7 +7,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Vuex from 'vuex'
+import store from './vuex/store'
 
+Vue.use(Vuex)
 Vue.use(ElementUI)
 let vjax = axios.create({
   baseURL: 'http://localhost:5000',
@@ -22,6 +25,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

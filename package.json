@@ -19,7 +19,9 @@
     "element-theme": "^0.2.0",
     "element-ui": "^1.1.5",
     "axios": "^0.15.3",
-    "vue-axios": "^1.2.2"
+    "vue-axios": "^1.2.2",
+    "md5": "^2.2.1",
+    "vuex": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
