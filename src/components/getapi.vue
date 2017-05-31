@@ -2,7 +2,7 @@
   <el-collapse v-model="totalMethods" accordion>
       <el-collapse-item>
         <template slot="title">
-          login()
+          {{methods}}
         </template>
         <api-page></api-page>
       </el-collapse-item>
@@ -33,6 +33,11 @@
         ]
       }
     },
-    components: {apiPage}
+    components: {apiPage},
+    computed: {
+      methods () {
+        return this.$store.state.methods
+      }
+    }
   }
 </script>

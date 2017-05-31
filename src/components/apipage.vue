@@ -2,27 +2,29 @@
   <div>
     <el-col>
       <el-form :model="allApi">
-        <i style="font-size: large">login</i>
-        <el-form-item label="Add params:" prop="header" >
-          <div>
-            <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer"></i>
-            <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
-            <br/>
-          </div>
-          <div v-for="(item, key) in allApi.methods" v-bind:key="key" style="margin-bottom:10px;">
-            <el-select v-model="selecttype" placeholder="type">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
-            <el-input v-model.trim="item.key" style="width: 200px; margin-right: 10px;" placeholder="key"></el-input>
-            <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value"></el-input>
-            <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
-          </div>
-        </el-form-item>
+        <template>
+          <i style="font-size: large">{{methods}}</i>
+          <el-form-item label="Add params:" prop="header" >
+            <div>
+              <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer"></i>
+              <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
+              <br/>
+            </div>
+            <div v-for="(item, key) in allApi.methods" v-bind:key="key" style="margin-bottom:10px;">
+              <el-select v-model="selecttype" placeholder="type">
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value">
+                </el-option>
+              </el-select>
+              <el-input v-model.trim="item.key" style="width: 200px; margin-right: 10px;" placeholder="key"></el-input>
+              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value"></el-input>
+              <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
+            </div>
+          </el-form-item>
+        </template>
       </el-form>
     </el-col>
   </div>
@@ -82,6 +84,11 @@
           .then((res) => {
             this.$store.commit('newResponse', res.data)
           })
+      }
+    },
+    computed: {
+      methods () {
+        return this.$store.state.methods
       }
     }
   }
