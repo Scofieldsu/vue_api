@@ -1,6 +1,6 @@
 <template>
   <el-collapse  accordion>
-      <el-collapse-item v-for="item in methods" :key="false">
+      <el-collapse-item v-for="item in methods" :key="item.name">
         <template slot="title">
           {{item.name}}
         </template>

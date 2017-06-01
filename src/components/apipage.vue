@@ -3,10 +3,10 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-size: large">{{methods.login.name}}</i>
-          <el-form-item label="Add params:" prop="header" >
+          <i style="font-weight: bold;color: #20a0ff">{{methods.login.description}}</i>
+          <el-form-item label="Add params:" prop="header">
             <div>
-              <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer"></i>
+              <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
               <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
               <br/>
             </div>
