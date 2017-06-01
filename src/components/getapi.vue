@@ -1,8 +1,8 @@
 <template>
   <el-collapse  accordion>
-      <el-collapse-item v-for="item in methods" :key="item.name">
+      <el-collapse-item v-for="item in allKey" :key="false">
         <template slot="title">
-          {{item.name}}
+          {{item}}
         </template>
         <api-page></api-page>
       </el-collapse-item>
@@ -20,9 +20,10 @@
     components: {apiPage},
     computed: {
       methods () {
-        let allMethods = this.$store.state.methods
-        delete allMethods.allKey
-        return allMethods
+        return this.$store.state.methods
+      },
+      allKey () {
+        return this.$store.state.methods.allKey
       }
     }
   }
