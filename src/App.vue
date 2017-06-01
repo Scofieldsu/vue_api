@@ -6,7 +6,7 @@
       <br/>
       <tab-page></tab-page>
     </div>
-    <div style="float: left;margin: 5% 5% 1% 5%;width: 40%;height: 100%">
+    <div style="float: left;margin: 5% 5% 0% 5%;width: 40%;height: 100%">
       <i style="font-size: large">Response</i>
       <respon-area></respon-area>
     </div>

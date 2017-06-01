@@ -3,7 +3,7 @@
     <el-input
       style="width: 100%;height: 80%"
       type="textarea"
-      :autosize="{ minRows: 23, maxRows: 100}"
+      :autosize="{ minRows: 25, maxRows: 100}"
       placeholder="Request body"
       v-model="textarea1">
     </el-input>

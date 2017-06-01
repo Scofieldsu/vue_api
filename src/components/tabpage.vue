@@ -13,7 +13,7 @@
     </el-tab-pane>
     <el-tab-pane label="Body" name="third">
       <div style="height: 100%">
-        <div style="margin: 2px">
+        <div style="margin: 5px">
           <body-page></body-page>
         </div>
         <div style="width: 100%;height: 100%">
