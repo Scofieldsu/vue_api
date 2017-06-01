@@ -21,7 +21,7 @@ import responArea from './components/respons.vue'
 export default {
   data: function () {
     return {
-      title: 'API-test'
+      title: 'API-Test'
     }
   },
   components: {headerA, tabPage, responArea}

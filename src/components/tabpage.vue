@@ -29,6 +29,7 @@
   </el-tabs>
 </template>
 <script>
+  import qs from 'qs'
   import authPage from './Authpage.vue'
   import headerPage from './Headerpage.vue'
   import bodyPage from './Bodypage.vue'
@@ -46,7 +47,16 @@
         console.log(tab, event)
       },
       getAllApi () {
-        this.$store.commit('getallMethods', {name: 'login()', description: '登录接口', params: {name: 'str'}})
+        let that = this
+        console.log('get all api')
+        that.axios.post('/get_all_api', qs.stringify({
+          name: 'yuyuan',
+          password: ('yuyuan')
+        }))
+          .then((res) => {
+            this.$store.commit('getallMethods', res.data)
+          })
+//        this.$store.commit('getallMethods', {name: 'login()', description: '登录接口', params: {name: 'str'}})
       }
     }
   }
