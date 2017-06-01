@@ -8,9 +8,12 @@ const store = new Vuex.Store({
   state: {
     response: '',
     methods: {
-      name: '',
-      description: '',
-      params: {}
+      login: {
+        name: '',
+        description: '',
+        params: {}
+      },
+      allKey: ['']
     },
     contentType: 'json',
     requestBody: 0

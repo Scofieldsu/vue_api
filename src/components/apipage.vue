@@ -3,14 +3,14 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-size: large">{{methods.name}}</i>
+          <i style="font-size: large">{{methods.login.name}}</i>
           <el-form-item label="Add params:" prop="header" >
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer"></i>
               <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
               <br/>
             </div>
-            <div v-for="(item, key) in allApi.methods" v-bind:key="key" style="margin-bottom:10px;">
+            <div v-for="(item, key) in allApi.methodParams" v-bind:key="key" style="margin-bottom:10px;">
               <el-select v-model="item.select" placeholder="type">
                 <el-option
                   v-for="item in options"
@@ -36,7 +36,7 @@
     data () {
       return {
         allApi: {
-          methods: [{select: 'str'}]
+          methodParams: [{select: 'str'}]
         },
         options: [
           {
@@ -66,12 +66,12 @@
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
-          this.allApi.methods.push({key: null, value: null, select: 'str'})
+          this.allApi.methodParams.push({key: null, value: null, select: 'str'})
         }
       },
       onRemoveHeader (type, key) {
         if (type === 'delHeader') {
-          this.allApi.methods.splice(key, 1)
+          this.allApi.methodParams.splice(key, 1)
         }
       },
       sendRequest () {

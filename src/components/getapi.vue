@@ -1,8 +1,8 @@
 <template>
-  <el-collapse v-model="totalMethods" accordion>
-      <el-collapse-item>
+  <el-collapse  accordion>
+      <el-collapse-item v-for="item in allKey" :key="false">
         <template slot="title">
-          {{methods.description}}
+          {{item}}
         </template>
         <api-page></api-page>
       </el-collapse-item>
@@ -14,14 +14,6 @@
   export default {
     data () {
       return {
-        totalMethods: [
-          {
-            name: 'login()'
-          },
-          {
-            name: 'register()'
-          }
-        ],
         allApi: {}
       }
     },
@@ -29,6 +21,9 @@
     computed: {
       methods () {
         return this.$store.state.methods
+      },
+      allKey () {
+        return this.$store.state.methods.allKey
       }
     }
   }
