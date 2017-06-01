@@ -37,6 +37,7 @@
       sendMessage () {
         let that = this
         console.log('submit')
+        this.$store.commit('newResponse', '')
         that.axios.post(that.inputUrl)
           .then((res) => {
             this.$store.commit('newResponse', res.data)

@@ -77,6 +77,7 @@
       sendRequest () {
         let that = this
         console.log('send')
+        this.$store.commit('newResponse', '')
         that.axios.post('/login', qs.stringify({
           name: 'yuyuan',
           password: md5('yuyuan')
