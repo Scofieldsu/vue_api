@@ -8,6 +8,8 @@
         <el-option label="PUT" value="3"></el-option>
         <el-option label="DELETE" value="4"></el-option>
         <el-option label="PATCH" value="5"></el-option>
+        <el-option label="HEAD" value="6"></el-option>
+        <el-option label="OPTIONS" value="7"></el-option>
       </el-select>
         <el-button @click="sendMessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">发送</el-button>
     </el-input>

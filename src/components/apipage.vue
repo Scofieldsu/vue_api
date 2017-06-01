@@ -11,7 +11,7 @@
               <br/>
             </div>
             <div v-for="(item, key) in allApi.methods" v-bind:key="key" style="margin-bottom:10px;">
-              <el-select v-model="selecttype" placeholder="type">
+              <el-select v-model="item.select" placeholder="type">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -36,7 +36,7 @@
     data () {
       return {
         allApi: {
-          methods: ['']
+          methods: [{select: 'str'}]
         },
         options: [
           {
@@ -60,13 +60,13 @@
             label: 'list'
           }
         ],
-        selecttype: 'int'
+        value: 'int'
       }
     },
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
-          this.allApi.methods.push({key: null, value: null})
+          this.allApi.methods.push({key: null, value: null, select: 'str'})
         }
       },
       onRemoveHeader (type, key) {
