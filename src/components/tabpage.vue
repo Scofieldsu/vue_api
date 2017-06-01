@@ -47,6 +47,7 @@
         console.log(tab, event)
       },
       getAllApi () {
+        this.$store.commit('getallMethods', {allKey: ['']})
         let that = this
         console.log('get all api')
         that.axios.post('/get_all_api', qs.stringify({
