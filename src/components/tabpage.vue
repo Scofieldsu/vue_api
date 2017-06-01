@@ -46,7 +46,7 @@
         console.log(tab, event)
       },
       getAllApi () {
-        this.$store.commit('getallMethods', 'login()')
+        this.$store.commit('getallMethods', {name: 'login()', description: '登录接口', params: {name: 'str'}})
       }
     }
   }

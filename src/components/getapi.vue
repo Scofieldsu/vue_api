@@ -2,7 +2,7 @@
   <el-collapse v-model="totalMethods" accordion>
       <el-collapse-item>
         <template slot="title">
-          {{methods}}
+          {{methods.description}}
         </template>
         <api-page></api-page>
       </el-collapse-item>
@@ -24,7 +24,8 @@
           {
             name: 'register()'
           }
-        ]
+        ],
+        allApi: {}
       }
     },
     components: {apiPage},

@@ -3,7 +3,7 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-size: large">{{methods}}</i>
+          <i style="font-size: large">{{methods.name}}</i>
           <el-form-item label="Add params:" prop="header" >
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer"></i>

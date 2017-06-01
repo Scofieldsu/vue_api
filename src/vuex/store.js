@@ -7,7 +7,11 @@ const store = new Vuex.Store({
   // 定义状态
   state: {
     response: '',
-    methods: '',
+    methods: {
+      name: '',
+      description: '',
+      params: {}
+    },
     contentType: 'json',
     requestBody: 0
     // requestBody为0显示文本框  为1 显示键值输入框
