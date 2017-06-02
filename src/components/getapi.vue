@@ -1,5 +1,5 @@
 <template>
-  <el-collapse  accordion>
+  <el-collapse v-on:change="setapiroute"  accordion>
       <el-collapse-item v-for="item in allKey" :key="false">
         <template slot="title">
           {{item}}
@@ -24,6 +24,12 @@
       },
       allKey () {
         return this.$store.state.methods.allKey
+      }
+    },
+    methods: {
+      setapiroute () {
+        console.log(this)
+        this.$store.commit('newResponse', this.title)
       }
     }
   }

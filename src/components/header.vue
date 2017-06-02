@@ -2,14 +2,14 @@
   <div style="margin-top: 15px;">
     <span>
       <el-input placeholder="API-url" v-model="inputUrl"  size="small">
-      <el-select v-model="select" slot="prepend" placeholder="请求方法" >
-        <el-option label="GET" value="1"></el-option>
-        <el-option label="POST" value="2"></el-option>
-        <el-option label="PUT" value="3"></el-option>
-        <el-option label="DELETE" value="4"></el-option>
-        <el-option label="PATCH" value="5"></el-option>
-        <el-option label="HEAD" value="6"></el-option>
-        <el-option label="OPTIONS" value="7"></el-option>
+      <el-select v-model="select" slot="prepend" placeholder="请求方法" v-on:change="changeWay">
+        <el-option label="GET" value="GET"></el-option>
+        <el-option label="POST" value="POST"></el-option>
+        <el-option label="PUT" value="PUT"></el-option>
+        <el-option label="DELETE" value="DELETE"></el-option>
+        <el-option label="PATCH" value="PATCH"></el-option>
+        <el-option label="HEAD" value="HEAD"></el-option>
+        <el-option label="OPTIONS" value="OPTIONS"></el-option>
       </el-select>
         <el-button @click="sendMessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">发送</el-button>
     </el-input>
@@ -36,12 +36,41 @@
     methods: {
       sendMessage () {
         let that = this
+        let way = that.select
         console.log('submit')
         this.$store.commit('newResponse', '')
-        that.axios.post(that.inputUrl)
-          .then((res) => {
-            this.$store.commit('newResponse', res.data)
-          })
+        if (way === 'POST') {
+          that.axios.post(that.inputUrl)
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        } else if (way === 'GET') {
+          that.axios.get(that.inputUrl)
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        } else if (way === 'PUT') {
+          that.axios.put(that.inputUrl)
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        } else if (way === 'DELETE') {
+          that.axios.delete(that.inputUrl)
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        }
+      },
+      changeWay (value) {
+        if (value === 'GET') {
+          this.$store.commit('setRequestWay', 'GET')
+        } else if (value === 'POST') {
+          this.$store.commit('setRequestWay', 'POST')
+        } else if (value === 'PUT') {
+          this.$store.commit('setRequestWay', 'PUT')
+        } else if (value === 'DELETE') {
+          this.$store.commit('setRequestWay', 'DELETE')
+        }
       }
     }
   }

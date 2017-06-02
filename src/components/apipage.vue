@@ -4,13 +4,13 @@
       <el-form :model="allApi">
         <template>
           <i style="font-weight: bold;color: #20a0ff">{{methods.login.description}}</i>
-          <el-form-item label="Add params:" prop="header">
+          <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
               <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
               <br/>
             </div>
-            <div v-for="(item, key) in allApi.methodParams" v-bind:key="key" style="margin-bottom:10px;">
+            <div v-for="(item, key) in methodParams" v-bind:key="key" style="margin-bottom:10px;">
               <el-select v-model="item.select" placeholder="type">
                 <el-option
                   v-for="item in options"
@@ -30,14 +30,14 @@
   </div>
 </template>
 <script>
+  import { mapGetters } from 'vuex'
   import qs from 'qs'
   import md5 from 'md5'
   export default {
     data () {
       return {
-        allApi: {
-          methodParams: [{select: 'str'}]
-        },
+        allApi: {},
+        methodParams: [{select: 'str'}],
         options: [
           {
             value: 'str',
@@ -66,31 +66,42 @@
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
-          this.allApi.methodParams.push({key: null, value: null, select: 'str'})
+          this.methodParams.push({key: null, value: null, select: 'str'})
         }
       },
       onRemoveHeader (type, key) {
         if (type === 'delHeader') {
-          this.allApi.methodParams.splice(key, 1)
+          this.methodParams.splice(key, 1)
         }
       },
       sendRequest () {
         let that = this
+        let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
-        that.axios.post('/login', qs.stringify({
-          name: 'yuyuan',
-          password: md5('yuyuan')
-        }))
-          .then((res) => {
-            this.$store.commit('newResponse', res.data)
-          })
+        if (getrequestway === 'POST') {
+          that.axios.post('/login', qs.stringify({
+            name: 'yuyuan',
+            password: md5('yuyuan')
+          }))
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        } else if (getrequestway === 'GET') {
+          that.axios.get('/login')
+            .then((res) => {
+              this.$store.commit('newResponse', res.data)
+            })
+        }
       }
     },
     computed: {
       methods () {
         return this.$store.state.methods
-      }
+      },
+      ...mapGetters([
+        'getrequestway'
+      ])
     }
   }
 </script>

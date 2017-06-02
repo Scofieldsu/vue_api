@@ -2,7 +2,7 @@
   <div>
     <el-col>
       <el-form :model="formServer">
-        <el-form-item label="Add params:" prop="header" >
+        <el-form-item label="Add params:">
           <div>
             <i class="el-icon-plus" @click="onAddHeader('addheader')" style="cursor: pointer"></i>
             <br/>

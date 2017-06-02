@@ -1,24 +1,26 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import * as getters from './getters'
 
 Vue.use(Vuex)
-
-const store = new Vuex.Store({
-  // 定义状态
-  state: {
-    response: '',
-    methods: {
-      login: {
-        name: '',
-        description: '',
-        params: {}
-      },
-      allKey: ['']
+const state = {
+  response: '',
+  methods: {
+    login: {
+      name: '',
+      description: '',
+      params: {}
     },
-    contentType: 'json',
-    requestBody: 0
-    // requestBody为0显示文本框  为1 显示键值输入框
+    allKey: ['']
   },
+  contentType: 'json',
+  requestBody: 0,
+  // requestBody为0显示文本框  为1 显示键值输入框
+  requestWay: 'POST'
+}
+const store = new Vuex.Store({
+  state,
+  getters,
   mutations: {
     newResponse (state, msg) {
       state.response = msg
@@ -31,6 +33,9 @@ const store = new Vuex.Store({
     },
     setContentType (state, msg) {
       state.contentType = msg
+    },
+    setRequestWay (state, msg) {
+      state.requestWay = msg
     }
   }
 })
