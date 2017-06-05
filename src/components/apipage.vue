@@ -3,7 +3,8 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-weight: bold;color: #20a0ff">{{methods.login.description}}</i>
+          <i style="font-weight: bold;color: #20a0ff">{{message.description}}</i>
+          <i>{{message.params}}</i>
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
@@ -63,6 +64,7 @@
         value: 'int'
       }
     },
+    props: ['message'],
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
@@ -101,8 +103,7 @@
       },
       ...mapGetters([
         'getrequestway'
-      ])
-    }
+      ])}
   }
 </script>
 
