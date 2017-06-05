@@ -3,8 +3,9 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-weight: bold;color: #20a0ff">{{message.description}}</i>
-          <i>{{message.params}}</i>
+          <i style="font-weight: bold;">{{message.name}}</i>
+          <br/>
+          <i style="font-weight: 600;color: #ff4949;">{{message.params}}</i>
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
@@ -32,13 +33,14 @@
 </template>
 <script>
   import { mapGetters } from 'vuex'
-  import qs from 'qs'
-  import md5 from 'md5'
+//  import qs from 'qs'
+//  import md5 from 'md5'
   export default {
     data () {
       return {
+        apiname: '',
         allApi: {},
-        methodParams: [{select: 'str'}],
+        methodParams: [{select: 'str', key: 'methods', value: ''}],
         options: [
           {
             value: 'str',
@@ -65,6 +67,8 @@
       }
     },
     props: ['message'],
+    watch: {
+    },
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
@@ -78,14 +82,13 @@
       },
       sendRequest () {
         let that = this
+        console.log(JSON.stringify(that.methodParams))
+        let rawdata = JSON.stringify(that.methodParams)
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post('/login', qs.stringify({
-            name: 'yuyuan',
-            password: md5('yuyuan')
-          }))
+          that.axios.post('/login', rawdata)
             .then((res) => {
               this.$store.commit('newResponse', res.data)
             })

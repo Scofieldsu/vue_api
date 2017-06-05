@@ -36,6 +36,9 @@ const store = new Vuex.Store({
     },
     setRequestWay (state, msg) {
       state.requestWay = msg
+    },
+    setallKey (state, msg) {
+      state.methods.allKey = msg
     }
   }
 })

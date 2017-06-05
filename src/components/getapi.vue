@@ -1,8 +1,9 @@
 <template>
-  <el-collapse  accordion>
-      <el-collapse-item v-for="itemapi in methods" :key="itemapi.name">
+  <el-collapse  accordion >
+      <el-collapse-item v-for="itemapi in methods" :key="itemapi.name" >
         <template slot="title">
-          {{itemapi.name}}
+          <el-tag type="danger">{{itemapi.name}}</el-tag>
+          <i style="color: #1d90e6">{{itemapi.description}}</i>
         </template>
         <api-page :message="itemapi"></api-page>
       </el-collapse-item>
