@@ -3,8 +3,8 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <i style="font-weight: bold;">{{message.name}}</i>
-          <br/>
+          <!--<i style="font-weight: bold;">{{message.name}}</i>-->
+          <!--<br/>-->
           <i style="font-weight: 600;color: #ff4949;">{{message.params}}</i>
           <el-form-item label="Add params:">
             <div>
@@ -37,10 +37,18 @@
 //  import md5 from 'md5'
   export default {
     data () {
+      let that = this
+      let methodParams = [{select: 'str', key: 'method', value: that.message.name}]
+      let rawparams = that.message.params
+      for (let i in rawparams) {
+        let tempdata = {key: '', select: ''}
+        tempdata.key = i
+        tempdata.select = rawparams[i]
+        methodParams.push(tempdata)
+      }
       return {
-        apiname: '',
         allApi: {},
-        methodParams: [{select: 'str', key: 'methods', value: ''}],
+        methodParams,
         options: [
           {
             value: 'str',
@@ -82,13 +90,14 @@
       },
       sendRequest () {
         let that = this
+        let apiurl = that.message.name
         console.log(JSON.stringify(that.methodParams))
         let rawdata = JSON.stringify(that.methodParams)
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post('/login', rawdata)
+          that.axios.post(apiurl, rawdata)
             .then((res) => {
               this.$store.commit('newResponse', res.data)
             })
