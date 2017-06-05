@@ -5,7 +5,7 @@
         <template>
           <!--<i style="font-weight: bold;">{{message.name}}</i>-->
           <!--<br/>-->
-          <i style="font-weight: 600;color: #ff4949;">{{message.params}}</i>
+          <i style="font-weight: 600;color: #20a0ff">{{message.params}}</i>
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
