@@ -29,7 +29,7 @@
   </el-tabs>
 </template>
 <script>
-  import qs from 'qs'
+//  import qs from 'qs'
   import authPage from './Authpage.vue'
   import headerPage from './Headerpage.vue'
   import bodyPage from './Bodypage.vue'
@@ -57,7 +57,7 @@
           },
           allKey: ['']
         })
-        that.axios.post('/get_all_api', qs.stringify({
+        that.axios.post('/get_all_api', JSON.stringify({
           name: 'yuyuan',
           password: ('yuyuan')
         }))

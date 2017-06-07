@@ -16,7 +16,9 @@ let vjax = axios.create({
   baseURL: 'http://localhost:5000',
   timeout: 5000
   // headers: {'post': {'Content-Type': 'application/x-www-form-urlencoded'}}
-  // headers: {'post': {'Content-Type': 'application/json'}}
+  // headers: {
+  //   'post': {'Content-Type': 'application/json'}
+  // }
 })
 Vue.use(VueAxios, vjax)
 

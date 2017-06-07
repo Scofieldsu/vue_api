@@ -91,13 +91,19 @@
       sendRequest () {
         let that = this
         let apiurl = that.message.name
-        console.log(JSON.stringify(that.methodParams))
-        let rawdata = JSON.stringify(that.methodParams)
+        let rawdata = that.methodParams
+        let data = {}
+        for (let n in rawdata) {
+          let newkey = rawdata[n].key
+          let newvalue = rawdata[n].value
+          data[newkey] = newvalue
+        }
+        console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post(apiurl, rawdata)
+          that.axios.post(apiurl, JSON.stringify(data))
             .then((res) => {
               this.$store.commit('newResponse', res.data)
             })
