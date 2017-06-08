@@ -90,27 +90,32 @@
       },
       sendRequest () {
         let that = this
-        let apiurl = that.message.name
+//        let apiurl = that.message.name
         let rawdata = that.methodParams
-        let data = {}
+        let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
-          data[newkey] = newvalue
+          if (newkey === 'method') {
+            data[newkey] = newvalue
+          } else {
+            data.params[newkey] = newvalue
+          }
         }
         console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post(apiurl, JSON.stringify(data))
+          that.axios.post('/', JSON.stringify(data))
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              console.log(res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         } else if (getrequestway === 'GET') {
-          that.axios.get('/login')
+          that.axios.get('/')
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         }
       }

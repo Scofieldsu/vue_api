@@ -57,12 +57,19 @@
           },
           allKey: ['']
         })
-        that.axios.post('/get_all_api', JSON.stringify({
-          name: 'yuyuan',
-          password: ('yuyuan')
+        console.log(JSON.stringify({
+          'jsonrpc': '2.0',
+          'id': 222222,
+          'method': 'get_all_api'
+        }))
+        that.axios.post('/', JSON.stringify({
+          'jsonrpc': '2.0',
+          'id': '111111',
+          'method': 'get_all_api'
         }))
           .then((res) => {
-            this.$store.commit('getallMethods', res.data)
+            console.log(res)
+            this.$store.commit('getallMethods', res.data.result)
           })
 //        this.$store.commit('getallMethods', {name: 'login()', description: '登录接口', params: {name: 'str'}})
       }
