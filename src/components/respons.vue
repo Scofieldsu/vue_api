@@ -1,7 +1,7 @@
 <template>
   <div >
     <el-input
-      style="width: 100%;height:100%"
+      class="response"
       type="textarea"
       :autosize="{ minRows: 29, maxRows: 100}"
       placeholder=""
@@ -24,3 +24,9 @@
   }
 </script>
 
+<style>
+  .response {
+    width: 100%;
+    height:100%
+  }
+</style>
