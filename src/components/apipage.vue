@@ -110,7 +110,7 @@
           that.axios.post('/', JSON.stringify(data))
             .then((res) => {
               console.log(res.data)
-              this.$store.commit('newResponse', res.data.result)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (getrequestway === 'GET') {
           that.axios.get('/')
