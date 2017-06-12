@@ -3,9 +3,9 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <!--<i style="font-weight: bold;">{{message.name}}</i>-->
-          <!--<br/>-->
-          <i style="font-weight: 600;color: #20a0ff">{{message.params}}</i>
+          <i style="font-weight: 600;color: #20a0ff">params:</i>{{message.params}}
+          <br/>
+          <i style="font-weight: 600;color: #13ce66">return:</i>{{message.return}}
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
