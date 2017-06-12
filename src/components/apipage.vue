@@ -3,9 +3,9 @@
     <el-col>
       <el-form :model="allApi">
         <template>
-          <!--<i style="font-weight: bold;">{{message.name}}</i>-->
-          <!--<br/>-->
-          <i style="font-weight: 600;color: #20a0ff">{{message.params}}</i>
+          <i style="font-weight: 600;color: #20a0ff">params:</i>{{message.params}}
+          <br/>
+          <i style="font-weight: 600;color: #13ce66">return:</i>{{message.return}}
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
@@ -90,27 +90,32 @@
       },
       sendRequest () {
         let that = this
-        let apiurl = that.message.name
+//        let apiurl = that.message.name
         let rawdata = that.methodParams
-        let data = {}
+        let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
-          data[newkey] = newvalue
+          if (newkey === 'method') {
+            data[newkey] = newvalue
+          } else {
+            data.params[newkey] = newvalue
+          }
         }
         console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post(apiurl, JSON.stringify(data))
+          that.axios.post('/', JSON.stringify(data))
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              console.log(res.data)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (getrequestway === 'GET') {
-          that.axios.get('/login')
+          that.axios.get('/')
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         }
       }

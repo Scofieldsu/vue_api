@@ -1,9 +1,9 @@
 <template>
   <div >
     <el-input
-      style="width: 100%;height:100%"
+      class="response"
       type="textarea"
-      :autosize="{ minRows: 29, maxRows: 100}"
+      :autosize="{ minRows: 35, maxRows: 35}"
       placeholder=""
       v-model="response">
     </el-input>
@@ -24,3 +24,9 @@
   }
 </script>
 
+<style>
+  .response {
+    width: 100%;
+    height:100%
+  }
+</style>

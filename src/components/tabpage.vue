@@ -9,7 +9,9 @@
       </div>
     </el-tab-pane>
     <el-tab-pane label="Headers" name="second">
-      <header-page></header-page>
+      <div style="overflow: scroll;height: 600px">
+        <header-page></header-page>
+      </div>
     </el-tab-pane>
     <el-tab-pane label="Body" name="third">
       <div style="height: 100%">
@@ -23,8 +25,10 @@
       </div>
     </el-tab-pane>
     <el-tab-pane label="Get API" name="fouth">
-      <el-button @click="getAllApi" type="info" size="small" style="margin: 5px">get all api</el-button>
-      <get-api></get-api>
+      <div style="height: 700px;overflow: scroll">
+        <el-button @click="getAllApi" type="info" size="small" style="margin: 5px">get all api</el-button>
+        <get-api></get-api>
+      </div>
     </el-tab-pane>
   </el-tabs>
 </template>
@@ -54,17 +58,17 @@
             name: '',
             description: '',
             params: {}
-          },
-          allKey: ['']
+          }
         })
-        that.axios.post('/get_all_api', JSON.stringify({
-          name: 'yuyuan',
-          password: ('yuyuan')
+        that.axios.post('/', JSON.stringify({
+          'jsonrpc': '2.0',
+          'id': '111111',
+          'method': 'get_all_api'
         }))
           .then((res) => {
-            this.$store.commit('getallMethods', res.data)
+            console.log(res)
+            this.$store.commit('getallMethods', res.data.result)
           })
-//        this.$store.commit('getallMethods', {name: 'login()', description: '登录接口', params: {name: 'str'}})
       }
     }
   }

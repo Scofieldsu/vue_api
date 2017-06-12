@@ -10,8 +10,7 @@ const state = {
       name: '',
       description: '',
       params: {}
-    },
-    allKey: ['']
+    }
   },
   contentType: 'json',
   requestBody: 0,
@@ -36,9 +35,6 @@ const store = new Vuex.Store({
     },
     setRequestWay (state, msg) {
       state.requestWay = msg
-    },
-    setallKey (state, msg) {
-      state.methods.allKey = msg
     }
   }
 })

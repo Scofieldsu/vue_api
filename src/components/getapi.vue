@@ -22,11 +22,7 @@
     computed: {
       methods () {
         let allmethods = this.$store.state.methods
-        delete allmethods.allKey
         return allmethods
-      },
-      allKey () {
-        return this.$store.state.methods.allKey
       }
     }
   }
