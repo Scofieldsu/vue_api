@@ -90,18 +90,35 @@
       },
       sendRequest () {
         let that = this
-//        let apiurl = that.message.name
         let rawdata = that.methodParams
         let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
+          if (rawdata[n].select === 'int' || rawdata[n].select === 'float') {
+            newvalue = Number(newvalue)
+          } else if (rawdata[n].select === 'list') {
+            if (newvalue === '[]') {
+              newvalue = []
+            } else {
+              let tempvalue = newvalue.replace('[', '').replace(']', '').split(',')
+              newvalue = []
+              for (let x in tempvalue) {
+                if (isNaN(Number(tempvalue[x]))) {
+                  newvalue.push(tempvalue[x].replace(/'/g, '').replace(/"/g, ''))
+                } else {
+                  newvalue.push(Number(tempvalue[x]))
+                }
+              }
+            }
+          }
           if (newkey === 'method') {
             data[newkey] = newvalue
           } else {
             data.params[newkey] = newvalue
           }
         }
+        console.log(data)
         console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
