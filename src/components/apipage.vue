@@ -124,13 +124,13 @@
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post('/', JSON.stringify(data))
+          that.axios.post(this.getCommonUrl, JSON.stringify(data))
             .then((res) => {
               console.log(res.data)
               this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (getrequestway === 'GET') {
-          that.axios.get('/')
+          that.axios.get(this.getCommonUrl)
             .then((res) => {
               this.$store.commit('newResponse', res.data.result)
             })
@@ -142,7 +142,8 @@
         return this.$store.state.methods
       },
       ...mapGetters([
-        'getrequestway'
+        'getrequestway',
+        'getCommonUrl'
       ])}
   }
 </script>

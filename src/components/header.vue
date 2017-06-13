@@ -1,7 +1,7 @@
 <template>
   <div style="margin-top: 15px;">
     <span>
-      <el-input placeholder="API-url" v-model="inputUrl"  size="small">
+      <el-input placeholder="API-url" v-model="inputUrl"  size="small" v-on:blur="setBaseUrl">
       <el-select v-model="select" slot="prepend" placeholder="请求方法" v-on:change="changeWay">
         <el-option label="GET" value="GET"></el-option>
         <el-option label="POST" value="POST"></el-option>
@@ -71,6 +71,9 @@
         } else if (value === 'DELETE') {
           this.$store.commit('setRequestWay', 'DELETE')
         }
+      },
+      setBaseUrl () {
+        this.$store.commit('setCommonUrl', this.inputUrl)
       }
     }
   }

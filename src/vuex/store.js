@@ -4,6 +4,7 @@ import * as getters from './getters'
 
 Vue.use(Vuex)
 const state = {
+  commonUrl: 'http://localhost:5000',
   response: '',
   methods: {
     login: {
@@ -35,6 +36,17 @@ const store = new Vuex.Store({
     },
     setRequestWay (state, msg) {
       state.requestWay = msg
+    },
+    setCommonUrl (state, msg) {
+      console.log(msg)
+      if (!msg) {
+        msg = 'http://localhost:5000'
+      }
+      if (!msg.startsWith('http://')) {
+        state.commonUrl = 'http://'.concat(msg)
+      } else {
+        state.commonUrl = msg
+      }
     }
   }
 })

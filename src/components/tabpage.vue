@@ -33,7 +33,7 @@
   </el-tabs>
 </template>
 <script>
-//  import qs from 'qs'
+  import { mapGetters } from 'vuex'
   import authPage from './Authpage.vue'
   import headerPage from './Headerpage.vue'
   import bodyPage from './Bodypage.vue'
@@ -60,7 +60,7 @@
             params: {}
           }
         })
-        that.axios.post('/', JSON.stringify({
+        that.axios.post(this.getCommonUrl, JSON.stringify({
           'jsonrpc': '2.0',
           'id': '111111',
           'method': 'get_all_api'
@@ -70,6 +70,10 @@
             this.$store.commit('getallMethods', res.data.result)
           })
       }
-    }
+    },
+    computed: {
+      ...mapGetters([
+        'getCommonUrl'
+      ])}
   }
 </script>
