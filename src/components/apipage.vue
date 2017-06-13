@@ -22,7 +22,7 @@
                 </el-option>
               </el-select>
               <el-input v-model.trim="item.key" style="width: 200px; margin-right: 10px;" placeholder="key"></el-input>
-              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value"></el-input>
+              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value" autosize=true type="textarea"></el-input>
               <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
             </div>
           </el-form-item>
