@@ -4,3 +4,6 @@ export const getrequestway = state => {
 export const getCommonUrl = state => {
   return state.commonUrl
 }
+export const getBodyContent = state => {
+  return state.bodycontent
+}

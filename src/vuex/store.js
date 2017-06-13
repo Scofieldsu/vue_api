@@ -4,6 +4,7 @@ import * as getters from './getters'
 
 Vue.use(Vuex)
 const state = {
+  bodycontent: '',
   commonUrl: 'http://localhost:5000',
   response: '',
   methods: {
@@ -47,6 +48,9 @@ const store = new Vuex.Store({
       } else {
         state.commonUrl = msg
       }
+    },
+    setBody (state, msg) {
+      state.bodycontent = msg
     }
   }
 })
