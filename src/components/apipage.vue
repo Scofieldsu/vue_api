@@ -90,30 +90,47 @@
       },
       sendRequest () {
         let that = this
-//        let apiurl = that.message.name
         let rawdata = that.methodParams
         let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
+          if (rawdata[n].select === 'int' || rawdata[n].select === 'float') {
+            newvalue = Number(newvalue)
+          } else if (rawdata[n].select === 'list') {
+            if (newvalue === '[]') {
+              newvalue = []
+            } else {
+              let tempvalue = newvalue.replace('[', '').replace(']', '').split(',')
+              newvalue = []
+              for (let x in tempvalue) {
+                if (isNaN(Number(tempvalue[x]))) {
+                  newvalue.push(tempvalue[x].replace(/'/g, '').replace(/"/g, ''))
+                } else {
+                  newvalue.push(Number(tempvalue[x]))
+                }
+              }
+            }
+          }
           if (newkey === 'method') {
             data[newkey] = newvalue
           } else {
             data.params[newkey] = newvalue
           }
         }
+        console.log(data)
         console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
         this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post('/', JSON.stringify(data))
+          that.axios.post(this.getCommonUrl, JSON.stringify(data))
             .then((res) => {
               console.log(res.data)
               this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (getrequestway === 'GET') {
-          that.axios.get('/')
+          that.axios.get(this.getCommonUrl)
             .then((res) => {
               this.$store.commit('newResponse', res.data.result)
             })
@@ -125,7 +142,8 @@
         return this.$store.state.methods
       },
       ...mapGetters([
-        'getrequestway'
+        'getrequestway',
+        'getCommonUrl'
       ])}
   }
 </script>
