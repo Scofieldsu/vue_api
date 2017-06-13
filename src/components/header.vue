@@ -43,23 +43,22 @@
         if (way === 'POST') {
           that.axios.post(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              console.log(res.data)
               this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (way === 'GET') {
-          that.axios.get(that.inputUrl)
+          that.axios.get(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', res.data.result)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (way === 'PUT') {
-          that.axios.put(that.inputUrl)
+          that.axios.put(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', res.data.result)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (way === 'DELETE') {
-          that.axios.delete(that.inputUrl)
+          that.axios.delete(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', res.data.result)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         }
       },
