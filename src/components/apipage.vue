@@ -22,7 +22,7 @@
                 </el-option>
               </el-select>
               <el-input v-model.trim="item.key" style="width: 200px; margin-right: 10px;" placeholder="key"></el-input>
-              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value"></el-input>
+              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value" autosize type="textarea"></el-input>
               <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
             </div>
           </el-form-item>
@@ -132,7 +132,7 @@
         } else if (getrequestway === 'GET') {
           that.axios.get(this.getCommonUrl)
             .then((res) => {
-              this.$store.commit('newResponse', res.data.result)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         }
       }

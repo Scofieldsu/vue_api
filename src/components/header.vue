@@ -25,6 +25,7 @@
 </style>
 <script>
   import ElOption from '../../node_modules/element-ui/packages/select/src/option'
+  import { mapGetters } from 'vuex'
   export default {
     components: {ElOption},
     data () {
@@ -40,24 +41,25 @@
         console.log('submit')
         this.$store.commit('newResponse', '')
         if (way === 'POST') {
-          that.axios.post(that.inputUrl)
+          that.axios.post(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              console.log(res.data)
+              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
             })
         } else if (way === 'GET') {
           that.axios.get(that.inputUrl)
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         } else if (way === 'PUT') {
           that.axios.put(that.inputUrl)
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         } else if (way === 'DELETE') {
           that.axios.delete(that.inputUrl)
             .then((res) => {
-              this.$store.commit('newResponse', res.data)
+              this.$store.commit('newResponse', res.data.result)
             })
         }
       },
@@ -75,7 +77,12 @@
       setBaseUrl () {
         this.$store.commit('setCommonUrl', this.inputUrl)
       }
-    }
+    },
+    computed: {
+      ...mapGetters([
+        'getBodyContent',
+        'getCommonUrl'
+      ])}
   }
 </script>
 
