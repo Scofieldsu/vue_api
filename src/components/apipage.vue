@@ -28,7 +28,7 @@
                 </el-option>
               </el-select>
               <el-input v-model.trim="item.key" style="width: 20%;" placeholder="key"></el-input>
-              <el-input v-model.trim="item.explain" style="width: 25%;" placeholder="说明" autosize type="textarea"></el-input>
+              <el-input v-model.trim="item.explain" style="width: 25%;" placeholder="--" autosize type="textarea"></el-input>
               <el-input v-model.trim="item.value" style="width: 25%;" placeholder="value" autosize type="textarea"></el-input>
               <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
             </div>
