@@ -57,6 +57,7 @@
           login: {
             name: '',
             description: '',
+            param_explain: {},
             params: {}
           }
         })

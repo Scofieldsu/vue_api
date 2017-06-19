@@ -9,11 +9,17 @@
           <el-form-item label="Add params:">
             <div>
               <i class="el-icon-plus" @click="onAddHeader('addHeader')" style="cursor: pointer" ></i>
-              <el-button  @click="sendRequest" type="success" size="small" style="margin-left: 40%">Send</el-button>
+              <el-button  @click="sendRequest" type="success" size="small" style="float: right; margin-right: 17%">Send</el-button>
               <br/>
             </div>
+            <el-tag type="" style="width: 12%;text-align: center">类型</el-tag>
+            <el-tag type="gray" style="width: 20%;text-align: center">参数</el-tag>
+            <el-tag type="success" style="width: 25%;text-align: center">说明</el-tag>
+            <el-tag type="primary" style="width: 25%;text-align: center">值</el-tag>
+            <div>
+            </div>
             <div v-for="(item, key) in methodParams" v-bind:key="key" style="margin-bottom:10px;">
-              <el-select v-model="item.select" placeholder="type">
+              <el-select v-model="item.select" placeholder="type"style="width: 12%">
                 <el-option
                   v-for="item in options"
                   :key="item.value"
@@ -21,8 +27,9 @@
                   :value="item.value">
                 </el-option>
               </el-select>
-              <el-input v-model.trim="item.key" style="width: 200px; margin-right: 10px;" placeholder="key"></el-input>
-              <el-input v-model.trim="item.value" style="width: 200px;" placeholder="value" autosize type="textarea"></el-input>
+              <el-input v-model.trim="item.key" style="width: 20%;" placeholder="key"></el-input>
+              <el-input v-model.trim="item.explain" style="width: 25%;" placeholder="说明" autosize type="textarea"></el-input>
+              <el-input v-model.trim="item.value" style="width: 25%;" placeholder="value" autosize type="textarea"></el-input>
               <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
             </div>
           </el-form-item>
@@ -33,16 +40,24 @@
 </template>
 <script>
   import { mapGetters } from 'vuex'
+  import ElInput from '../../node_modules/element-ui/packages/input/src/input'
 //  import qs from 'qs'
 //  import md5 from 'md5'
   export default {
+    components: {ElInput},
     data () {
       let that = this
-      let methodParams = [{select: 'str', key: 'method', value: that.message.name}]
+      let methodParams = [{select: 'str', key: 'method', explain: '方法名', value: that.message.name}]
       let rawparams = that.message.params
+      let rawExplain = that.message.param_explain
       for (let i in rawparams) {
-        let tempdata = {key: '', select: ''}
+        let tempdata = {key: '', select: '', explain: ''}
         tempdata.key = i
+        if (rawExplain) {
+          tempdata.explain = rawExplain[i]
+        } else {
+          tempdata.explain = ''
+        }
         tempdata.select = rawparams[i]
         methodParams.push(tempdata)
       }
@@ -80,7 +95,7 @@
     methods: {
       onAddHeader (type) {
         if (type === 'addHeader') {
-          this.methodParams.push({key: null, value: null, select: 'str'})
+          this.methodParams.push({key: null, value: null, select: 'str', explain: ''})
         }
       },
       onRemoveHeader (type, key) {
@@ -91,6 +106,7 @@
       sendRequest () {
         let that = this
         let rawdata = that.methodParams
+        console.log(rawdata)
         let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
           let newkey = rawdata[n].key

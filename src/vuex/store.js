@@ -11,6 +11,7 @@ const state = {
     login: {
       name: '',
       description: '',
+      param_explain: {},
       params: {}
     }
   },
