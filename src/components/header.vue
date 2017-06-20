@@ -43,22 +43,38 @@
         if (way === 'POST') {
           that.axios.post(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              }
             })
         } else if (way === 'GET') {
           that.axios.get(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              }
             })
         } else if (way === 'PUT') {
           that.axios.put(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              }
             })
         } else if (way === 'DELETE') {
           that.axios.delete(this.getCommonUrl, this.getBodyContent)
             .then((res) => {
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              }
             })
         }
       },
