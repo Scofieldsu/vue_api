@@ -41,6 +41,7 @@
 <script>
   import { mapGetters } from 'vuex'
   import ElInput from '../../node_modules/element-ui/packages/input/src/input'
+  import commonJs from '../utils/common'
 //  import qs from 'qs'
 //  import md5 from 'md5'
   export default {
@@ -106,26 +107,37 @@
       sendRequest () {
         let that = this
         let rawdata = that.methodParams
+        let tempStr = ''
+        let tranStr = commonJs.transStr
         console.log(rawdata)
         let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
         for (let n in rawdata) {
+          if (!rawdata[n].value) {
+            tempStr += '参数 ' + rawdata[n].key + '缺少值;\n'
+          }
+        }
+        this.$store.commit('newResponse', tempStr)
+        for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
+          // 类型为int或者float 转换
           if (rawdata[n].select === 'int' || rawdata[n].select === 'float') {
-            newvalue = Number(newvalue)
+            if (Number(newvalue)) {
+              newvalue = Number(newvalue)
+            } else {
+              newvalue = undefined
+            }
           } else if (rawdata[n].select === 'list') {
             if (newvalue === '[]') {
               newvalue = []
+            } else if (!newvalue) {
+              newvalue = undefined
             } else {
-              let tempvalue = newvalue.replace('[', '').replace(']', '').split(',')
-              newvalue = []
-              for (let x in tempvalue) {
-                if (isNaN(Number(tempvalue[x]))) {
-                  newvalue.push(tempvalue[x].replace(/'/g, '').replace(/"/g, ''))
-                } else {
-                  newvalue.push(Number(tempvalue[x]))
-                }
-              }
+              newvalue = tranStr.toList(newvalue)
+            }
+          } else if (rawdata[n].select === 'str') {
+            if (!newvalue) {
+              newvalue = undefined
             }
           }
           if (newkey === 'method') {
@@ -138,17 +150,27 @@
         console.log(JSON.stringify(data))
         let getrequestway = that.getrequestway
         console.log('send')
-        this.$store.commit('newResponse', '')
+//        this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
           that.axios.post(this.getCommonUrl, JSON.stringify(data))
             .then((res) => {
               console.log(res.data)
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data && !tempStr) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else if ('result' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              } else if (!('error' in res.data) && !('result' in res.data)) {
+                this.$store.commit('newResponse', '该请求响应中无result或者error信息')
+              }
             })
         } else if (getrequestway === 'GET') {
           that.axios.get(this.getCommonUrl)
             .then((res) => {
-              this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              if ('error' in res.data) {
+                this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
+              } else {
+                this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              }
             })
         }
       }
