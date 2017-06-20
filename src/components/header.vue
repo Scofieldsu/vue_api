@@ -11,7 +11,7 @@
         <el-option label="HEAD" value="HEAD"></el-option>
         <el-option label="OPTIONS" value="OPTIONS"></el-option>
       </el-select>
-        <el-button @click="sendMessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">发送</el-button>
+        <el-button @click="sendMessage" slot="append" type="success" style="background-color: #1D8CE0;color: whitesmoke;font-weight: bold">Send</el-button>
     </el-input>
     </span>
 
