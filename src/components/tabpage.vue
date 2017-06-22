@@ -1,9 +1,9 @@
 <template>
   <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
-    <el-tab-pane label="Authorization" name="first">
+    <el-tab-pane label="Authorization"  name="first">
       <div>
         <span >
-          <span style="margin:50px">Type</span>
+            <el-tag type="primary"  style="text-align: center;margin: 20px;font-size: medium">Type</el-tag>
           <auth-page style="width: 40% "></auth-page>
         </span>
       </div>
@@ -26,7 +26,7 @@
     </el-tab-pane>
     <el-tab-pane label="Get API" name="fouth">
       <div style="height: 700px;overflow: scroll">
-        <el-button @click="getAllApi" type="info" size="small" style="margin: 5px">get all api</el-button>
+        <el-button @click="getAllApi" type="info" size="small" style="margin: 5px">Get All Api</el-button>
         <get-api></get-api>
       </div>
     </el-tab-pane>
