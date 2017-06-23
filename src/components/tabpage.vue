@@ -53,6 +53,13 @@
       getAllApi () {
         let that = this
         console.log('get all api')
+        console.log(JSON.stringify({
+          'jsonrpc': '2.0',
+          'id': '111111',
+          'method': 'get_all_api',
+          'params': {}
+        }))
+        this.$store.commit('newResponse', '')
         this.$store.commit('getallMethods', {
           login: {
             name: '',
@@ -68,7 +75,11 @@
         }))
           .then((res) => {
             console.log(res)
-            this.$store.commit('getallMethods', res.data.result)
+            if ('result' in res.data) {
+              this.$store.commit('getallMethods', res.data.result)
+            } else {
+              this.$store.commit('newResponse', JSON.stringify(res.data, null, 2))
+            }
           })
       }
     },

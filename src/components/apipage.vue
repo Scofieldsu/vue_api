@@ -168,8 +168,10 @@
             .then((res) => {
               if ('error' in res.data) {
                 this.$store.commit('newResponse', JSON.stringify(res.data.error, null, 2))
-              } else {
+              } else if ('result' in res.data) {
                 this.$store.commit('newResponse', JSON.stringify(res.data.result, null, 2))
+              } else if (!('error' in res.data) && !('result' in res.data)) {
+                this.$store.commit('newResponse', '该请求响应中无result或者error信息')
               }
             })
         }
