@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5134accc-de87-4799-99c2-1687b51e697d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/apipage.vue" afterPath="$PROJECT_DIR$/src/components/apipage.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tabpage.vue" afterPath="$PROJECT_DIR$/src/components/tabpage.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,7 +22,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tabpage.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tabpage.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/tabpage.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
@@ -36,6 +37,16 @@
                 <element signature="n#style#0;n#el-button#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#1183#1216#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="apipage.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="apipage.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/apipage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            <state relative-caret-position="203">
+              <caret line="179" column="105" lean-forward="true" selection-start-line="179" selection-start-column="87" selection-end-line="179" selection-end-column="105" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#1;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -149,7 +160,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/components/textarea.vue" />
         <option value="$PROJECT_DIR$/src/components/Authpage.vue" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/Bodypage.vue" />
         <option value="$PROJECT_DIR$/src/vuex/mutations.js" />
         <option value="$PROJECT_DIR$/src/vuex/actions.js" />
@@ -168,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/components/header.vue" />
         <option value="$PROJECT_DIR$/src/components/Headerpage.vue" />
         <option value="$PROJECT_DIR$/src/components/tabpage.vue" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/apipage.vue" />
       </list>
     </option>
@@ -184,8 +195,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="726" />
-    <option name="y" value="89" />
+    <option name="x" value="596" />
+    <option name="y" value="87" />
     <option name="width" value="1471" />
     <option name="height" value="865" />
   </component>
@@ -397,12 +408,12 @@
       <workItem from="1497919241345" duration="18144000" />
       <workItem from="1498005830389" duration="4532000" />
       <workItem from="1498092131148" duration="4952000" />
-      <workItem from="1498178715296" duration="12911000" />
+      <workItem from="1498178715296" duration="17768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225257000" />
+    <option name="totallyTimeSpent" value="230114000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,7 +425,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="726" y="89" width="1471" height="865" extended-state="0" />
+    <frame x="596" y="87" width="1471" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15143056" sideWeight="0.49015749" order="0" side_tool="false" content_ui="combo" />
@@ -605,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.js" />
     <entry file="file://$PROJECT_DIR$/src/router/index.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -799,10 +803,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/tabpage.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#el-tag#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1183#1216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apipage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        <state relative-caret-position="203">
+          <caret line="179" column="105" lean-forward="true" selection-start-line="179" selection-start-column="87" selection-end-line="179" selection-end-column="105" />
           <folding>
             <element signature="n#style#0;n#i#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#1;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -818,23 +847,6 @@
             <element signature="n#style#0;n#el-input#2;n#div#2;n#el-form-item#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#el-date-picker#0;n#div#2;n#el-form-item#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#2296#2329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/tabpage.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#el-tag#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-tab-pane#1;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#el-tab-pane#2;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#el-button#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1183#1216#0" expanded="true" />
           </folding>
         </state>
       </provider>

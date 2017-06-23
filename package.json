@@ -21,7 +21,8 @@
     "axios": "^0.15.3",
     "vue-axios": "^1.2.2",
     "md5": "^2.2.1",
-    "vuex": "^2.1.1"
+    "vuex": "^2.1.1",
+    "moment": "^2.17.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

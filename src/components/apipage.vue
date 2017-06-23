@@ -50,8 +50,8 @@
   import { mapGetters } from 'vuex'
   import ElInput from '../../node_modules/element-ui/packages/input/src/input'
   import commonJs from '../utils/common'
-//  import qs from 'qs'
-//  import md5 from 'md5'
+  import moment from 'moment'
+
   export default {
     components: {ElInput},
     data () {
@@ -174,12 +174,10 @@
               newvalue = undefined
             }
           } else if (rawdata[n].select === 'datetime') {
-            console.log('111111')
-            console.log(typeof (newvalue))
-            console.log('111111')
             if (!newvalue) {
               newvalue = undefined
             } else {
+              newvalue = moment(newvalue, 'YYYY-MM-DD HH:MM:SS').format().split('+')[0].replace('T', ' ')
             }
           } else if (rawdata[n].select === 'dict') {
             if (!newvalue) {
