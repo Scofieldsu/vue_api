@@ -52,6 +52,12 @@
       },
       getAllApi () {
         let that = this
+        let Resource = {
+          'jsonrpc': '2.0',
+          'method': 'get_all_api',
+          'params': {}
+        }
+        Resource['id'] = '111111'
         console.log('get all api')
         this.$store.commit('newResponse', '')
         this.$store.commit('getallMethods', {
@@ -62,12 +68,7 @@
             params: {}
           }
         })
-        that.axios.post(this.getCommonUrl, JSON.stringify({
-          'jsonrpc': '2.0',
-          'id': '111111',
-          'method': 'get_all_api',
-          'params': {}
-        }))
+        that.axios.post(this.getCommonUrl, JSON.stringify(Resource))
           .then((res) => {
             console.log(res)
             if ('result' in res.data) {
