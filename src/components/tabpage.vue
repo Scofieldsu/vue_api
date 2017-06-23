@@ -53,12 +53,6 @@
       getAllApi () {
         let that = this
         console.log('get all api')
-        console.log(JSON.stringify({
-          'jsonrpc': '2.0',
-          'id': '111111',
-          'method': 'get_all_api',
-          'params': {}
-        }))
         this.$store.commit('newResponse', '')
         this.$store.commit('getallMethods', {
           login: {
@@ -71,7 +65,8 @@
         that.axios.post(this.getCommonUrl, JSON.stringify({
           'jsonrpc': '2.0',
           'id': '111111',
-          'method': 'get_all_api'
+          'method': 'get_all_api',
+          'params': {}
         }))
           .then((res) => {
             console.log(res)

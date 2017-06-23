@@ -29,7 +29,15 @@
               </el-select>
               <el-input v-model.trim="item.key" style="width: 20%;" placeholder="key"></el-input>
               <el-input v-model.trim="item.explain" style="width: 25%;" placeholder="--" autosize type="textarea"></el-input>
-              <el-input v-model.trim="item.value" style="width: 25%;" placeholder="value" autosize type="textarea"></el-input>
+              <el-input v-model.trim="item.value"  v-if="item.select !== 'datetime'" style="width: 25%;" placeholder="value" autosize type="textarea"></el-input>
+              <el-date-picker
+                style="width: 25%"
+                v-if="item.select === 'datetime'"
+                v-model.trim="item.value"
+                type="datetime"
+                placeholder="选择日期时间"
+                :picker-options="pickerOptions">
+              </el-date-picker>
               <i class="el-icon-delete" @click="onRemoveHeader('delHeader',key)"></i>
             </div>
           </el-form-item>
@@ -52,7 +60,7 @@
       let rawparams = that.message.params
       let rawExplain = that.message.param_explain
       for (let i in rawparams) {
-        let tempdata = {key: '', select: '', explain: ''}
+        let tempdata = {key: '', select: '', explain: '', value: ''}
         tempdata.key = i
         if (rawExplain) {
           tempdata.explain = rawExplain[i]
@@ -85,8 +93,34 @@
           {
             value: 'list',
             label: 'list'
+          },
+          {
+            value: 'datetime',
+            label: 'datetime'
           }
         ],
+        pickerOptions: {
+          shortcuts: [{
+            text: '今天',
+            onClick (picker) {
+              picker.$emit('pick', new Date())
+            }
+          }, {
+            text: '昨天',
+            onClick (picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24)
+              picker.$emit('pick', date)
+            }
+          }, {
+            text: '一周前',
+            onClick (picker) {
+              const date = new Date()
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)
+              picker.$emit('pick', date)
+            }
+          }]
+        },
         value: 'int'
       }
     },
@@ -136,6 +170,18 @@
               newvalue = tranStr.toList(newvalue)
             }
           } else if (rawdata[n].select === 'str') {
+            if (!newvalue) {
+              newvalue = undefined
+            }
+          } else if (rawdata[n].select === 'datetime') {
+            console.log('111111')
+            console.log(typeof (newvalue))
+            console.log('111111')
+            if (!newvalue) {
+              newvalue = undefined
+            } else {
+            }
+          } else if (rawdata[n].select === 'dict') {
             if (!newvalue) {
               newvalue = undefined
             }
