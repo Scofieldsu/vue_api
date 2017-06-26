@@ -5,7 +5,7 @@ import * as getters from './getters'
 Vue.use(Vuex)
 const state = {
   bodycontent: '',
-  commonUrl: 'http://localhost:5000',
+  commonUrl: 'http://localhost:5000/api',
   response: '',
   methods: {
     login: {
@@ -42,7 +42,7 @@ const store = new Vuex.Store({
     setCommonUrl (state, msg) {
       console.log(msg)
       if (!msg) {
-        msg = 'http://localhost:5000'
+        msg = 'http://localhost:5000/api'
       }
       if (!msg.startsWith('http://')) {
         state.commonUrl = 'http://'.concat(msg)
