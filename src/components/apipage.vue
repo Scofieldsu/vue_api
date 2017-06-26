@@ -143,8 +143,9 @@
         let rawdata = that.methodParams
         let tempStr = ''
         let tranStr = commonJs.transStr
+        let now = new Date()
         console.log(rawdata)
-        let data = {'jsonrpc': '2.0', 'id': 1111, 'params': {}}
+        let data = {'jsonrpc': '2.0', 'id': moment(now, 'YYYY-MM-DD HH:MM:SS').format(), 'params': {}}
         for (let n in rawdata) {
           if (!rawdata[n].value) {
             tempStr += '参数 ' + rawdata[n].key + '缺少值;\n'

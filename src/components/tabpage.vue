@@ -39,6 +39,7 @@
   import bodyPage from './Bodypage.vue'
   import resquestArea from './requestbody.vue'
   import getApi from './getapi.vue'
+  import moment from 'moment'
   export default {
     data () {
       return {
@@ -52,12 +53,13 @@
       },
       getAllApi () {
         let that = this
+        let now = new Date()
         let Resource = {
           'jsonrpc': '2.0',
           'method': 'get_all_api',
           'params': {}
         }
-        Resource['id'] = '111111'
+        Resource['id'] = moment(now, 'YYYY-MM-DD HH:MM:SS').format()
         console.log('get all api')
         this.$store.commit('newResponse', '')
         this.$store.commit('getallMethods', {
