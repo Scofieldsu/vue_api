@@ -155,9 +155,9 @@
         for (let n in rawdata) {
           let newkey = rawdata[n].key
           let newvalue = rawdata[n].value
-          // 类型为int或者float 转换
+          // int或者float类型参数，如果是非数值型的，Number（）的值是NaN
           if (rawdata[n].select === 'int' || rawdata[n].select === 'float') {
-            if (Number(newvalue)) {
+            if (Number(newvalue) || Number(newvalue) === 0) {
               newvalue = Number(newvalue)
             } else {
               newvalue = undefined
