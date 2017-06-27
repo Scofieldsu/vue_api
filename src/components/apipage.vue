@@ -56,7 +56,7 @@
     components: {ElInput},
     data () {
       let that = this
-      let methodParams = [{select: 'str', key: 'method', explain: '方法名', value: that.message.name}]
+      let methodParams = [{select: 'str', key: 'method', explain: '方法名', value: that.message.name.replace('__', '.')}]
       let rawparams = that.message.params
       let rawExplain = that.message.param_explain
       for (let i in rawparams) {
@@ -183,6 +183,8 @@
           } else if (rawdata[n].select === 'dict') {
             if (!newvalue) {
               newvalue = undefined
+            } else {
+              newvalue = JSON.parse(newvalue)
             }
           }
           if (newkey === 'method') {
@@ -197,7 +199,7 @@
         console.log('send')
 //        this.$store.commit('newResponse', '')
         if (getrequestway === 'POST') {
-          that.axios.post(this.getCommonUrl, JSON.stringify(data))
+          that.axios.post(this.getCommonUrl, data)
             .then((res) => {
               console.log(res.data)
               if ('error' in res.data && !tempStr) {

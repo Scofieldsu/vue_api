@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5134accc-de87-4799-99c2-1687b51e697d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vuex/store.js" afterPath="$PROJECT_DIR$/src/vuex/store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/apipage.vue" afterPath="$PROJECT_DIR$/src/components/apipage.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/getapi.vue" afterPath="$PROJECT_DIR$/src/components/getapi.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/tabpage.vue" afterPath="$PROJECT_DIR$/src/components/tabpage.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="tabpage.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tabpage.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/tabpage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="47" />
+            <state relative-caret-position="415">
+              <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#el-tag#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#auth-page#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
@@ -43,10 +46,34 @@
       <file leaf-file-name="header.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-114">
-              <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="64" />
+            <state relative-caret-position="-399">
+              <caret line="3" column="93" lean-forward="false" selection-start-line="3" selection-start-column="93" selection-end-line="3" selection-end-column="93" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#el-button#0;n#el-input#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="e#959#1038#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-76">
+              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="28" />
+              <folding>
+                <element signature="e#140#161#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,8 +82,8 @@
       <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="418">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -80,19 +107,11 @@
       <file leaf-file-name="getapi.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/getapi.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Headerpage.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Headerpage.vue">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="76">
-              <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-              <folding />
+              <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +119,8 @@
       <file leaf-file-name="apipage.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/apipage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="147" column="44" lean-forward="false" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
+            <state relative-caret-position="114">
+              <caret line="201" column="49" lean-forward="true" selection-start-line="201" selection-start-column="49" selection-end-line="201" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#i#1;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -132,21 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="store.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vuex/store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="44" column="40" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authpage.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Authpage.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+            <state relative-caret-position="836">
+              <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -192,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/utils/util.js" />
         <option value="$PROJECT_DIR$/src/components/scolllist.vue" />
         <option value="$PROJECT_DIR$/src/components/respons.vue" />
-        <option value="$PROJECT_DIR$/src/components/getapi.vue" />
         <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/vuex/getters.js" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -201,11 +209,12 @@
         <option value="$PROJECT_DIR$/src/components/requestbody.vue" />
         <option value="$PROJECT_DIR$/src/components/Headerpage.vue" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/header.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
-        <option value="$PROJECT_DIR$/src/components/tabpage.vue" />
-        <option value="$PROJECT_DIR$/src/components/apipage.vue" />
         <option value="$PROJECT_DIR$/src/vuex/store.js" />
+        <option value="$PROJECT_DIR$/src/components/header.vue" />
+        <option value="$PROJECT_DIR$/src/components/getapi.vue" />
+        <option value="$PROJECT_DIR$/src/components/apipage.vue" />
+        <option value="$PROJECT_DIR$/src/components/tabpage.vue" />
       </list>
     </option>
   </component>
@@ -221,10 +230,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="395" />
-    <option name="y" value="85" />
+    <option name="x" value="390" />
+    <option name="y" value="40" />
     <option name="width" value="1471" />
-    <option name="height" value="960" />
+    <option name="height" value="925" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -241,7 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,7 +291,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vuex" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,7 +315,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,12 +444,13 @@
       <workItem from="1498005830389" duration="4532000" />
       <workItem from="1498092131148" duration="4952000" />
       <workItem from="1498178715296" duration="19195000" />
-      <workItem from="1498438683951" duration="3329000" />
+      <workItem from="1498438683951" duration="3927000" />
+      <workItem from="1498525613043" duration="8070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234870000" />
+    <option name="totallyTimeSpent" value="243538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,15 +462,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="395" y="85" width="1471" height="960" extended-state="0" />
+    <frame x="390" y="40" width="1471" height="925" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15143056" sideWeight="0.49015749" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286119" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962743" sideWeight="0.5056657" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962743" sideWeight="0.5056657" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34478527" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2669864" sideWeight="0.5098425" order="3" side_tool="true" content_ui="tabs" />
@@ -705,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/respons.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -734,16 +737,6 @@
           <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#el-button#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -793,14 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/getapi.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vuex/getters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -819,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="418">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -830,10 +815,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#140#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vuex/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="3" column="93" lean-forward="false" selection-start-line="3" selection-start-column="93" selection-end-line="3" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-button#0;n#el-input#0;n#span#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#959#1038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/getapi.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#template#0;n#el-collapse-item#0;n#el-collapse#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/apipage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="147" column="44" lean-forward="false" selection-start-line="147" selection-start-column="44" selection-end-line="147" selection-end-column="44" />
+        <state relative-caret-position="114">
+          <caret line="201" column="49" lean-forward="true" selection-start-line="201" selection-start-column="49" selection-end-line="201" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#i#0;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#1;n#template#0;n#el-form#0;n#el-col#0;n#div#0;n#template#0;n#!!top" expanded="true" />
@@ -853,20 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-114">
-          <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/tabpage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="47" />
+        <state relative-caret-position="415">
+          <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#el-tag#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#auth-page#0;n#span#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
@@ -878,14 +901,6 @@
             <element signature="n#style#0;n#el-button#0;n#div#0;n#el-tab-pane#3;n#el-tabs#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#1183#1216#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vuex/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="44" column="40" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>

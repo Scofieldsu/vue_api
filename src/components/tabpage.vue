@@ -70,7 +70,7 @@
             params: {}
           }
         })
-        that.axios.post(this.getCommonUrl, JSON.stringify(Resource))
+        that.axios.post(this.getCommonUrl, Resource)
           .then((res) => {
             console.log(res)
             if ('result' in res.data) {

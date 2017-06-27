@@ -2,7 +2,7 @@
   <el-collapse  accordion >
       <el-collapse-item v-for="itemapi in methods" :key="itemapi.name" >
         <template slot="title">
-          <el-tag type="danger">{{itemapi.name}}</el-tag>
+          <el-tag type="danger">{{itemapi.name.replace('__','.')}}</el-tag>
           <i style="color: #1d90e6">{{itemapi.description}}</i>
         </template>
         <api-page :message="itemapi"></api-page>
