@@ -56,7 +56,7 @@
     components: {ElInput},
     data () {
       let that = this
-      let methodParams = [{select: 'str', key: 'method', explain: '方法名', value: that.message.name.replace('__', '.')}]
+      let methodParams = [{select: 'str', key: 'method', explain: '方法名', value: that.message.name}]
       let rawparams = that.message.params
       let rawExplain = that.message.param_explain
       for (let i in rawparams) {
