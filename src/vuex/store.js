@@ -8,11 +8,11 @@ const state = {
   commonUrl: 'http://localhost:5000/api',
   response: '',
   methods: {
-    login: {
-      name: '',
-      description: '',
-      param_explain: {},
-      params: {}
+    hello: {
+      name: 'hello',
+      description: 'welcome to use Api-Test for hello',
+      param_explain: {'name': 'user name'},
+      params: {'name': 'str'}
     }
   },
   contentType: 'json',

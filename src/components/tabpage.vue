@@ -63,11 +63,11 @@
         console.log('get all api')
         this.$store.commit('newResponse', '')
         this.$store.commit('getallMethods', {
-          login: {
-            name: '',
-            description: '',
-            param_explain: {},
-            params: {}
+          hello: {
+            name: 'hello',
+            description: 'welcome to use Api-Test for hello',
+            param_explain: {'name': 'user name'},
+            params: {'name': 'str'}
           }
         })
         that.axios.post(this.getCommonUrl, Resource)
