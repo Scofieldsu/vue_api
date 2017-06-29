@@ -24,6 +24,7 @@ function transStrToList (newvalue) {
   return newvalue
 }
 
+// 把字典类型的字符串转换为字典
 function transStrToDict (dictStr) {
   let resDict = {}
   let tempList = dictStr.substr(1, dictStr.length - 2).split(',')
@@ -38,8 +39,20 @@ function transStrToDict (dictStr) {
   return resDict
 }
 
+// 以数组类型返回对象的keys
+function getdictkeys (dict) {
+  let keys = []
+  for (let x in dict) {
+    keys.push(x)
+  }
+  return keys
+}
+
 export default {
   transStr: {
     toList: transStrToList
+  },
+  transDict: {
+    getKeys: getdictkeys
   }
 }
